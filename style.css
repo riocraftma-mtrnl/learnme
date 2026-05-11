@@ -54,6 +54,10 @@ body{
   padding:20px;
 
   border-bottom:1px solid #222;
+
+  position:sticky;
+  top:0;
+  z-index:999;
 }
 
 .navbar a{
@@ -112,26 +116,6 @@ body{
   margin-bottom:30px;
 }
 
-button{
-  padding:16px 30px;
-
-  border:none;
-  border-radius:16px;
-
-  background:gold;
-  color:black;
-
-  font-weight:bold;
-
-  cursor:pointer;
-
-  transition:.3s;
-}
-
-button:hover{
-  transform:translateY(-5px);
-}
-
 .hero-image{
   flex:1;
 }
@@ -140,6 +124,11 @@ button:hover{
   width:100%;
   border-radius:30px;
 }
+
+/* ================================================= */
+/* BUTTON */
+/* ================================================= */
+
 .cta-button{
   display:inline-block;
 
@@ -159,6 +148,7 @@ button:hover{
 .cta-button:hover{
   transform:translateY(-5px);
 }
+
 .portfolio-btn{
   display:inline-block;
 
@@ -179,14 +169,14 @@ button:hover{
 }
 
 .portfolio-btn:hover{
-  transform:translateY(-5px);
-
   background:gold;
   color:black;
+
+  transform:translateY(-5px);
 }
 
 /* ================================================= */
-/* TRUST BOX */
+/* TRUST */
 /* ================================================= */
 
 .trust{
@@ -220,13 +210,8 @@ button:hover{
 }
 
 /* ================================================= */
-/* SERVICES */
+/* SECTION TITLE */
 /* ================================================= */
-
-.services{
-  padding:120px 10%;
-  background:#222;
-}
 
 .title{
   text-align:center;
@@ -242,6 +227,10 @@ button:hover{
   font-size:42px;
 }
 
+/* ================================================= */
+/* GRID */
+/* ================================================= */
+
 .grid{
   display:grid;
 
@@ -251,13 +240,17 @@ button:hover{
   gap:25px;
 }
 
+/* ================================================= */
+/* CARD */
+/* ================================================= */
+
 .card{
   position:relative;
 
   background:
   linear-gradient(
     145deg,
-    #151515,
+    #181818,
     #101010
   );
 
@@ -271,7 +264,7 @@ button:hover{
   transition:.3s;
 }
 
-/* glow emas */
+/* efek glow */
 .card::before{
 
   content:"";
@@ -296,21 +289,15 @@ button:hover{
 
   opacity:0;
 
-  transition:opacity .3s;
+  transition:.3s;
 
   pointer-events:none;
 }
 
-/* pas hover */
 .card:hover::before{
   opacity:1;
 }
 
-.card:hover{
-  transform:translateY(-10px);
-
-  border-color:rgba(255,215,0,.5);
-}
 .card:hover{
   transform:translateY(-10px);
 
@@ -322,9 +309,56 @@ button:hover{
 }
 
 .card p{
-  color:#a1a1aa;
+  color:#aaa;
   line-height:1.7;
 }
+
+/* ================================================= */
+/* SERVICES */
+/* ================================================= */
+
+.services{
+  padding:120px 10%;
+  background:#222;
+}
+
+/* ================================================= */
+/* VIEW MORE */
+/* ================================================= */
+
+.view-more-wrap{
+  text-align:center;
+  margin-top:40px;
+}
+
+.view-more-btn{
+  padding:16px 35px;
+
+  border:none;
+  border-radius:16px;
+
+  background:gold;
+  color:black;
+
+  font-weight:700;
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.view-more-btn:hover{
+  transform:translateY(-5px);
+}
+
+.extra-services{
+  display:none;
+  margin-top:35px;
+}
+
+.extra-services.show{
+  display:block;
+}
+
 /* ================================================= */
 /* PROBLEMS */
 /* ================================================= */
@@ -337,7 +371,8 @@ button:hover{
 .solution-box{
   margin-top:60px;
 
-  background:linear-gradient(
+  background:
+  linear-gradient(
     135deg,
     #1a1a1a,
     #111
@@ -363,22 +398,14 @@ button:hover{
   max-width:800px;
   margin:auto;
 }
+
 /* ================================================= */
-/* TESTIMONIALS */
+/* TESTIMONIAL */
 /* ================================================= */
 
 .testimonials{
-  padding:120px 20%;
+  padding:120px 10%;
   background:#222;
-}
-
-.testimonials .card{
-  background:#2a2a5a;
-}
-
-.testimonials h3{
-  color:gold;
-  margin-bottom:20px;
 }
 
 .testimonials span{
@@ -386,6 +413,7 @@ button:hover{
   margin-top:20px;
   color:#888;
 }
+
 /* ================================================= */
 /* WHY US */
 /* ================================================= */
@@ -394,26 +422,10 @@ button:hover{
   padding:120px 10%;
   background:#0d0d0d;
 }
+
 /* ================================================= */
-/* RESPONSIVE */
+/* PORTFOLIO CTA */
 /* ================================================= */
-
-@media(max-width:900px){
-
-  .hero{
-    flex-direction:column;
-    padding:60px 10%;
-  }
-
-  .hero h1{
-    font-size:42px;
-  }
-
-}
-
-/* ========================================= */
-/* PORTFOLIO PAGE */
-/* ========================================= */
 
 .portfolio-page{
   padding:120px 10%;
@@ -421,7 +433,8 @@ button:hover{
 }
 
 .portfolio-box{
-  background:linear-gradient(
+  background:
+  linear-gradient(
     135deg,
     #1a1a1a,
     #111
@@ -437,7 +450,6 @@ button:hover{
 
 .small-text{
   color:gold;
-
   letter-spacing:3px;
 
   margin-bottom:20px;
@@ -445,7 +457,6 @@ button:hover{
 
 .portfolio-box h2{
   font-size:52px;
-
   margin-bottom:20px;
 }
 
@@ -479,14 +490,6 @@ button:hover{
   transform:translateY(-5px);
 }
 
-/* responsive */
-@media(max-width:900px){
-
-  .portfolio-box h2{
-    font-size:36px;
-  }
-
-}
 /* ================================================= */
 /* FINAL CTA */
 /* ================================================= */
@@ -501,7 +504,7 @@ button:hover{
 }
 
 .final-cta h1{
-  font-size:100px;
+  font-size:90px;
   line-height:1.1;
 
   max-width:1000px;
@@ -517,7 +520,6 @@ button:hover{
   margin-bottom:50px;
 }
 
-/* tombol whatsapp gede */
 .whatsapp-big{
   display:inline-block;
 
@@ -536,10 +538,13 @@ button:hover{
 }
 
 .whatsapp-big:hover{
-  transform:translateY(-8px) scale(1.03);
+  transform:translateY(-8px);
 }
 
-/* lokasi */
+/* ================================================= */
+/* LOCATION */
+/* ================================================= */
+
 .location-box{
   margin-top:70px;
 
@@ -568,7 +573,6 @@ button:hover{
   margin-bottom:30px;
 }
 
-/* tombol maps */
 .visit-btn{
   display:inline-block;
 
@@ -589,23 +593,73 @@ button:hover{
   transform:translateY(-5px);
 }
 
-/* responsive */
-@media(max-width:900px){
+/* ================================================= */
+/* FLOATING */
+/* ================================================= */
 
-  .final-cta h1{
-    font-size:52px;
-  }
-  /* ================================================= */
+.floating-social{
+  position:fixed;
+
+  right:20px;
+  bottom:20px;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:15px;
+
+  z-index:9999;
+}
+
+.floating-social a{
+  width:58px;
+  height:58px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  text-decoration:none;
+  font-size:26px;
+
+  box-shadow:
+  0 10px 25px rgba(0,0,0,.25);
+
+  transition:.3s;
+}
+
+.floating-wa{
+  background:#25D366;
+  color:white;
+}
+
+.floating-ig{
+  background:
+  linear-gradient(
+    135deg,
+    #833ab4,
+    #fd1d1d,
+    #fcb045
+  );
+
+  color:white;
+}
+
+.floating-social a:hover{
+  transform:translateY(-5px) scale(1.05);
+}
+
+/* ================================================= */
 /* ANIMATION */
 /* ================================================= */
 
-/* kondisi awal */
 .card,
 .hero-text,
 .hero-image,
 .solution-box,
 .final-cta{
-
   opacity:0;
 
   transform:
@@ -615,18 +669,14 @@ button:hover{
   all .8s ease;
 }
 
-/* pas muncul */
 .active{
-
   opacity:1;
 
   transform:
   translateY(0);
 }
 
-/* navbar pas scroll */
 .navbar-active{
-
   background:
   rgba(10,10,10,.9);
 
@@ -636,54 +686,45 @@ button:hover{
   box-shadow:
   0 10px 30px rgba(0,0,0,.3);
 }
-  /* ================================================= */
-/* MOBILE RESPONSIVE */
+
+/* ================================================= */
+/* RESPONSIVE */
 /* ================================================= */
 
 @media(max-width:900px){
 
-  /* hero jadi ke bawah */
   .hero{
     flex-direction:column;
+    padding:60px 10%;
   }
 
-  /* title hero */
   .hero h1{
     font-size:42px;
-    line-height:1.2;
   }
 
-  /* gambar */
-  .hero-image img{
-    margin-top:40px;
+  .title h2{
+    font-size:32px;
   }
 
-  /* navbar */
-  .navbar{
-    gap:20px;
-    flex-wrap:wrap;
-  }
-
-  /* trust box */
-  .trust{
-    flex-direction:column;
-  }
-
-  /* final cta */
   .final-cta h1{
     font-size:52px;
   }
 
-  /* location box */
-  .location-box{
-    padding:30px 20px;
+  .portfolio-box h2{
+    font-size:36px;
   }
 
-  /* grid */
+  .trust{
+    flex-direction:column;
+  }
+
   .grid{
     grid-template-columns:1fr;
   }
 
-}
+  .navbar{
+    flex-wrap:wrap;
+    gap:20px;
+  }
 
 }
