@@ -1,2 +1,0 @@
-# learnme
-bengkel las
