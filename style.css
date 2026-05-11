@@ -42,6 +42,7 @@ body{
   margin-left:20px;
 }
 
+
 /* ================================================= */
 /* NAVBAR */
 /* ================================================= */
@@ -54,10 +55,6 @@ body{
   padding:20px;
 
   border-bottom:1px solid #222;
-
-  position:sticky;
-  top:0;
-  z-index:999;
 }
 
 .navbar a{
@@ -116,6 +113,26 @@ body{
   margin-bottom:30px;
 }
 
+button{
+  padding:16px 30px;
+
+  border:none;
+  border-radius:16px;
+
+  background:gold;
+  color:black;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+button:hover{
+  transform:translateY(-5px);
+}
+
 .hero-image{
   flex:1;
 }
@@ -124,11 +141,6 @@ body{
   width:100%;
   border-radius:30px;
 }
-
-/* ================================================= */
-/* BUTTON */
-/* ================================================= */
-
 .cta-button{
   display:inline-block;
 
@@ -148,7 +160,6 @@ body{
 .cta-button:hover{
   transform:translateY(-5px);
 }
-
 .portfolio-btn{
   display:inline-block;
 
@@ -169,14 +180,14 @@ body{
 }
 
 .portfolio-btn:hover{
+  transform:translateY(-5px);
+
   background:gold;
   color:black;
-
-  transform:translateY(-5px);
 }
 
 /* ================================================= */
-/* TRUST */
+/* TRUST BOX */
 /* ================================================= */
 
 .trust{
@@ -208,10 +219,79 @@ body{
   color:#aaa;
   font-size:12px;
 }
+/* ========================================= */
+/* VIEW MORE */
+/* ========================================= */
 
+.view-more-wrap{
+  text-align:center;
+
+  margin-top:40px;
+}
+
+.view-more-btn{
+  padding:16px 35px;
+
+  border:none;
+  border-radius:16px;
+
+  background:gold;
+  color:black;
+
+  font-weight:700;
+  font-size:16px;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.view-more-btn:hover{
+  transform:translateY(-5px);
+
+  box-shadow:
+  0 10px 30px rgba(255,215,0,.2);
+}
+
+/* layanan tambahan */
+
+
+/* layanan tambahan */
+
+.extra-services{
+
+  max-height:0;
+
+  opacity:0;
+
+  overflow:hidden;
+
+  transform:translateY(-20px);
+
+  transition:
+  max-height 1.2s ease,
+  opacity .8s ease,
+  transform .8s ease;
+}
+
+.extra-services.show{
+
+  max-height:3000px;
+
+  opacity:1;
+
+  transform:translateY(0);
+
+  margin-top:35px;
+}
 /* ================================================= */
-/* SECTION TITLE */
+/* SERVICES */
 /* ================================================= */
+
+.services{
+  padding:120px 10%;
+  background:#222;
+}
 
 .title{
   text-align:center;
@@ -227,10 +307,6 @@ body{
   font-size:42px;
 }
 
-/* ================================================= */
-/* GRID */
-/* ================================================= */
-
 .grid{
   display:grid;
 
@@ -240,17 +316,13 @@ body{
   gap:25px;
 }
 
-/* ================================================= */
-/* CARD */
-/* ================================================= */
-
 .card{
   position:relative;
 
   background:
   linear-gradient(
     145deg,
-    #181818,
+    #151515,
     #101010
   );
 
@@ -264,7 +336,7 @@ body{
   transition:.3s;
 }
 
-/* efek glow */
+/* glow emas */
 .card::before{
 
   content:"";
@@ -289,15 +361,21 @@ body{
 
   opacity:0;
 
-  transition:.3s;
+  transition:opacity .3s;
 
   pointer-events:none;
 }
 
+/* pas hover */
 .card:hover::before{
   opacity:1;
 }
 
+.card:hover{
+  transform:translateY(-10px);
+
+  border-color:rgba(255,215,0,.5);
+}
 .card:hover{
   transform:translateY(-10px);
 
@@ -309,56 +387,9 @@ body{
 }
 
 .card p{
-  color:#aaa;
+  color:#a1a1aa;
   line-height:1.7;
 }
-
-/* ================================================= */
-/* SERVICES */
-/* ================================================= */
-
-.services{
-  padding:120px 10%;
-  background:#222;
-}
-
-/* ================================================= */
-/* VIEW MORE */
-/* ================================================= */
-
-.view-more-wrap{
-  text-align:center;
-  margin-top:40px;
-}
-
-.view-more-btn{
-  padding:16px 35px;
-
-  border:none;
-  border-radius:16px;
-
-  background:gold;
-  color:black;
-
-  font-weight:700;
-  cursor:pointer;
-
-  transition:.3s;
-}
-
-.view-more-btn:hover{
-  transform:translateY(-5px);
-}
-
-.extra-services{
-  display:none;
-  margin-top:35px;
-}
-
-.extra-services.show{
-  display:block;
-}
-
 /* ================================================= */
 /* PROBLEMS */
 /* ================================================= */
@@ -371,8 +402,7 @@ body{
 .solution-box{
   margin-top:60px;
 
-  background:
-  linear-gradient(
+  background:linear-gradient(
     135deg,
     #1a1a1a,
     #111
@@ -398,14 +428,22 @@ body{
   max-width:800px;
   margin:auto;
 }
-
 /* ================================================= */
-/* TESTIMONIAL */
+/* TESTIMONIALS */
 /* ================================================= */
 
 .testimonials{
-  padding:120px 10%;
+  padding:120px 20%;
   background:#222;
+}
+
+.testimonials .card{
+  background:#2a2a5a;
+}
+
+.testimonials h3{
+  color:gold;
+  margin-bottom:20px;
 }
 
 .testimonials span{
@@ -413,7 +451,6 @@ body{
   margin-top:20px;
   color:#888;
 }
-
 /* ================================================= */
 /* WHY US */
 /* ================================================= */
@@ -422,10 +459,26 @@ body{
   padding:120px 10%;
   background:#0d0d0d;
 }
+/* ================================================= */
+/* RESPONSIVE */
+/* ================================================= */
 
-/* ================================================= */
-/* PORTFOLIO CTA */
-/* ================================================= */
+@media(max-width:900px){
+
+  .hero{
+    flex-direction:column;
+    padding:60px 10%;
+  }
+
+  .hero h1{
+    font-size:42px;
+  }
+
+}
+
+/* ========================================= */
+/* PORTFOLIO PAGE */
+/* ========================================= */
 
 .portfolio-page{
   padding:120px 10%;
@@ -433,8 +486,7 @@ body{
 }
 
 .portfolio-box{
-  background:
-  linear-gradient(
+  background:linear-gradient(
     135deg,
     #1a1a1a,
     #111
@@ -450,6 +502,7 @@ body{
 
 .small-text{
   color:gold;
+
   letter-spacing:3px;
 
   margin-bottom:20px;
@@ -457,6 +510,7 @@ body{
 
 .portfolio-box h2{
   font-size:52px;
+
   margin-bottom:20px;
 }
 
@@ -490,6 +544,14 @@ body{
   transform:translateY(-5px);
 }
 
+/* responsive */
+@media(max-width:900px){
+
+  .portfolio-box h2{
+    font-size:36px;
+  }
+
+}
 /* ================================================= */
 /* FINAL CTA */
 /* ================================================= */
@@ -504,7 +566,7 @@ body{
 }
 
 .final-cta h1{
-  font-size:90px;
+  font-size:100px;
   line-height:1.1;
 
   max-width:1000px;
@@ -520,6 +582,7 @@ body{
   margin-bottom:50px;
 }
 
+/* tombol whatsapp gede */
 .whatsapp-big{
   display:inline-block;
 
@@ -538,13 +601,10 @@ body{
 }
 
 .whatsapp-big:hover{
-  transform:translateY(-8px);
+  transform:translateY(-8px) scale(1.03);
 }
 
-/* ================================================= */
-/* LOCATION */
-/* ================================================= */
-
+/* lokasi */
 .location-box{
   margin-top:70px;
 
@@ -573,6 +633,7 @@ body{
   margin-bottom:30px;
 }
 
+/* tombol maps */
 .visit-btn{
   display:inline-block;
 
@@ -593,94 +654,23 @@ body{
   transform:translateY(-5px);
 }
 
-/* ========================================= */
-/* FLOATING SOCIAL */
-/* ========================================= */
-
-.floating-social{
-  position:fixed;
-
-  right:20px;
-  bottom:20px;
-
-  display:flex;
-  flex-direction:column;
-
-  gap:12px;
-
-  z-index:999;
-}
-
-/* tombol bulat kecil */
-.floating-social a{
-  width:52px;
-  height:52px;
-
-  border-radius:50%;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  text-decoration:none;
-
-  font-size:22px;
-
-  color:white;
-
-  box-shadow:
-  0 10px 25px rgba(0,0,0,.35);
-
-  transition:.3s;
-}
-
-/* hover */
-.floating-social a:hover{
-  transform:translateY(-5px) scale(1.08);
-}
-
-/* whatsapp */
-.floating-wa{
-  background:#25D366;
-}
-
-/* instagram */
-.floating-ig{
-  background:
-  linear-gradient(
-    135deg,
-    #833AB4,
-    #FD1D1D,
-    #FCAF45
-  );
-}
-
-/* mobile */
+/* responsive */
 @media(max-width:900px){
 
-  .floating-social{
-    right:15px;
-    bottom:15px;
+  .final-cta h1{
+    font-size:52px;
   }
-
-  .floating-social a{
-    width:46px;
-    height:46px;
-
-    font-size:20px;
-  }
-
-}
-
-/* ================================================= */
+  /* ================================================= */
 /* ANIMATION */
 /* ================================================= */
 
+/* kondisi awal */
 .card,
 .hero-text,
 .hero-image,
 .solution-box,
 .final-cta{
+
   opacity:0;
 
   transform:
@@ -690,14 +680,18 @@ body{
   all .8s ease;
 }
 
+/* pas muncul */
 .active{
+
   opacity:1;
 
   transform:
   translateY(0);
 }
 
+/* navbar pas scroll */
 .navbar-active{
+
   background:
   rgba(10,10,10,.9);
 
@@ -707,45 +701,109 @@ body{
   box-shadow:
   0 10px 30px rgba(0,0,0,.3);
 }
-
-/* ================================================= */
-/* RESPONSIVE */
+  /* ================================================= */
+/* MOBILE RESPONSIVE */
 /* ================================================= */
 
 @media(max-width:900px){
 
+  /* hero jadi ke bawah */
   .hero{
     flex-direction:column;
-    padding:60px 10%;
   }
 
+  /* title hero */
   .hero h1{
     font-size:42px;
+    line-height:1.2;
   }
 
-  .title h2{
-    font-size:32px;
+  /* gambar */
+  .hero-image img{
+    margin-top:40px;
   }
 
-  .final-cta h1{
-    font-size:52px;
+  /* navbar */
+  .navbar{
+    gap:20px;
+    flex-wrap:wrap;
   }
 
-  .portfolio-box h2{
-    font-size:36px;
-  }
-
+  /* trust box */
   .trust{
     flex-direction:column;
   }
 
+  /* final cta */
+  .final-cta h1{
+    font-size:52px;
+  }
+
+  /* location box */
+  .location-box{
+    padding:30px 20px;
+  }
+
+  /* grid */
   .grid{
     grid-template-columns:1fr;
   }
 
-  .navbar{
-    flex-wrap:wrap;
-    gap:20px;
-  }
+}
 
+}
+/* ========================================= */
+/* FLOATING SOCIAL FIX */
+/* ========================================= */
+
+.floating-social{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:12px;
+
+  z-index:99999;
+}
+
+.floating-social a{
+  width:55px;
+  height:55px;
+
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  text-decoration:none;
+
+  color:rgba(192, 255, 3, 0.829);
+  font-size:24px;
+
+  box-shadow:
+  0 10px 25px rgba(251, 235, 115, 0.35);
+
+  transition:.3s;
+}
+
+.floating-social a:hover{
+  transform:translateY(-5px);
+}
+
+.floating-wa{
+  background:#25D366;
+}
+
+.floating-ig{
+  background:
+  linear-gradient(
+    135deg,
+    #833AB4,
+    #FD1D1D,
+    #FCAF45
+  );
 }
