@@ -98,4 +98,31 @@ window.addEventListener("scroll", () => {
 
   }
 
+
+});
+
+/* ========================================= */
+/* VIEW MORE SERVICES */
+/* ========================================= */
+
+const viewMoreBtn =
+document.getElementById("viewMoreBtn");
+
+const extraServices =
+document.getElementById("extraServices");
+
+viewMoreBtn.addEventListener("click", () => {
+
+  extraServices.classList.toggle("show");
+
+  if(extraServices.classList.contains("show")){
+
+    viewMoreBtn.innerHTML = "View Less";
+
+  }else{
+
+    viewMoreBtn.innerHTML = "View More";
+
+  }
+
 });
